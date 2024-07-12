@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://h66ivnvbihlb"]
+
+[ext_resource type="PackedScene" uid="uid://dpyccoysc6360" path="res://player/player.tscn" id="1_olf86"]
+[ext_resource type="PackedScene" uid="uid://duywxdb0pviey" path="res://system/mob_spawner.tscn" id="2_3pck0"]
+
+[node name="TestMobSpawning" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_olf86")]
+position = Vector2(567, 348)
+ritual_damage = 0
+health = 1000
+max_health = 1000
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_3pck0")]
+mobs_per_minute = 1.0

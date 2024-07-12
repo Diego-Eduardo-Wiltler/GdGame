@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://6pqn22tprf4v"]
+
+[ext_resource type="Texture2D" uid="uid://bsfabw3q8se0n" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="1_e12ps"]
+[ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="2_3a4li"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3glwq"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftrg8"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2b16"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1fe6"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcetk"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtixx"]
+atlas = ExtResource("1_e12ps")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njabn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3glwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftrg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2b16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1fe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcetk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtixx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tf5iv"]
+radius = 19.0
+height = 56.0
+
+[node name="Pawn2d" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -33)
+sprite_frames = SubResource("SpriteFrames_njabn")
+autoplay = "default"
+frame_progress = 0.197168
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -32)
+shape = SubResource("CapsuleShape2D_tf5iv")
+
+[node name="FollowerPlayer" type="Node" parent="."]
+script = ExtResource("2_3a4li")

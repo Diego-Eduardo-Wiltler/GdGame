@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://di0q0rbs0wvod"]
+
+[ext_resource type="Texture2D" uid="uid://dfl5hlwdnxf8k" path="res://addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_gets6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MSpawn" type="Sprite2D" parent="."]
+position = Vector2(1764, 885)
+texture = ExtResource("1_gets6")
