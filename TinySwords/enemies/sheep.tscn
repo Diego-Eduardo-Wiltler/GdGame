@@ -60,6 +60,7 @@ radius = 20.0
 height = 40.0
 
 [node name="Sheep" type="CharacterBody2D" groups=["enemies"]]
+motion_mode = 1
 script = ExtResource("1_rbaq5")
 health = 1
 death_prefab = ExtResource("2_p6ldk")
@@ -76,3 +77,6 @@ shape = SubResource("CapsuleShape2D_nxnse")
 [node name="FollowPlayer" type="Node" parent="."]
 script = ExtResource("4_tmuwf")
 speed = 2.0
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -37)

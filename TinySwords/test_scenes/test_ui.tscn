@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://clgy3d20e6erw"]
+
+[ext_resource type="PackedScene" uid="uid://dpyccoysc6360" path="res://player/player.tscn" id="1_qqcfc"]
+[ext_resource type="PackedScene" uid="uid://bnhgaov0s8upl" path="res://UI/game_ui.tscn" id="2_mfyyd"]
+[ext_resource type="PackedScene" uid="uid://duywxdb0pviey" path="res://system/mob_spawner.tscn" id="4_da53g"]
+[ext_resource type="PackedScene" uid="uid://c825qu64vrsjs" path="res://misc/meat.tscn" id="5_3t5a4"]
+[ext_resource type="PackedScene" uid="uid://dgh4mooad5gkn" path="res://enemies/pawn.tscn" id="5_ip8rt"]
+
+[node name="TestUi" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qqcfc")]
+position = Vector2(576, 218)
+ritual_damage = 5
+
+[node name="GameUI" parent="." instance=ExtResource("2_mfyyd")]
+
+[node name="Meat" parent="." instance=ExtResource("5_3t5a4")]
+position = Vector2(343, 550)
+
+[node name="Meat2" parent="." instance=ExtResource("5_3t5a4")]
+position = Vector2(604, 473)
+
+[node name="MobSpawner" parent="." instance=ExtResource("4_da53g")]
+position = Vector2(142, 214)
+mobs_per_minute = 10.0
+
+[node name="Pawn" parent="." instance=ExtResource("5_ip8rt")]
+position = Vector2(208, 257)

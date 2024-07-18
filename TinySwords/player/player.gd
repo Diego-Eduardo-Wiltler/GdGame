@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
 
 var input_vector: Vector2 = Vector2.ZERO
 var is_running: bool = false
@@ -25,6 +26,11 @@ var is_attacking: bool = false
 var attack_cooldown: float = 0.0
 var hitbox_cooldown: float = 0.0
 var ritual_cooldown: float = 0.0
+
+signal meat_collected(value:int)
+
+func _ready():
+	GameManager.player = self
 
 func _process(delta):
 	GameManager.player_position = position
@@ -41,6 +47,9 @@ func _process(delta):
 	update_hitbox_detection(delta)
 	
 	update_ritual(delta)
+	
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 
 func update_ritual(delta:float):
 	ritual_cooldown -= delta
@@ -50,7 +59,7 @@ func update_ritual(delta:float):
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
-
+	
 func _physics_process(delta: float):
 	#Modificar a velocidade
 	var target_velocity = input_vector * speed * 100
@@ -146,13 +155,13 @@ func update_hitbox_detection(delta: float):
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			var enemy: Enemy = body
-			var damage_amount = 0
+			var damage_amount = 1
 			damage(damage_amount)
 
 func damage(amount: int):
 	if health <= 0: return
 	health -= amount
-	print(health)
+
 	
 	#Piscar node
 	modulate = Color.RED
@@ -175,5 +184,4 @@ func heal(amount: int):
 	health += amount
 	if health > max_health:
 		health = max_health
-	print(health)
 	return health

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dux111sytgdhe"]
+
+[ext_resource type="PackedScene" uid="uid://dpyccoysc6360" path="res://player/player.tscn" id="1_5n25m"]
+[ext_resource type="PackedScene" uid="uid://b8xjhfp0g5h8w" path="res://ally/cat_ally.tscn" id="2_ekx4d"]
+[ext_resource type="PackedScene" uid="uid://bws38cyyo06wg" path="res://enemies/goblin.tscn" id="3_lwqcn"]
+
+[node name="TestAlly" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5n25m")]
+position = Vector2(539, 352)
+ritual_damage = 0
+
+[node name="CatAlly" parent="." instance=ExtResource("2_ekx4d")]
+position = Vector2(730, 357)
+damage_amount = 3
+cat_interval = 1.0
+
+[node name="Goblin" parent="." instance=ExtResource("3_lwqcn")]
+position = Vector2(650, 376)
+
+[node name="Goblin2" parent="." instance=ExtResource("3_lwqcn")]
+position = Vector2(810, 470)
+
+[node name="Goblin3" parent="." instance=ExtResource("3_lwqcn")]
+position = Vector2(798, 348)

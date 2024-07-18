@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://b8xjhfp0g5h8w"]
+
+[ext_resource type="Script" path="res://ally/cat_ally.gd" id="1_41rf1"]
+[ext_resource type="Texture2D" uid="uid://dc3ox4nn0703t" path="res://addons/Pet Cats Pack/Cat-2/Cat-2-Run.png" id="2_r1hvo"]
+[ext_resource type="Script" path="res://ally/behavior/follow_ally.gd" id="3_bpviu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxsjo"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seywk"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abep6"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bheo"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw2l7"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv47w"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acux6"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql86h"]
+atlas = ExtResource("2_r1hvo")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nao4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxsjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seywk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abep6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bheo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw2l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv47w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql86h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1iusw"]
+radius = 19.105
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsr5y"]
+radius = 32.0156
+
+[node name="CatAlly" type="CharacterBody2D"]
+script = ExtResource("1_41rf1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, -19)
+scale = Vector2(2.70675, 2.60264)
+sprite_frames = SubResource("SpriteFrames_nao4c")
+autoplay = "default"
+frame = 7
+frame_progress = 0.266345
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -18)
+shape = SubResource("CircleShape2D_1iusw")
+disabled = true
+
+[node name="FollowAlly" type="Node" parent="."]
+script = ExtResource("3_bpviu")
+
+[node name="HitboxArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(-1, -18)
+shape = SubResource("CircleShape2D_qsr5y")
+debug_color = Color(0.793644, 0.334139, 3.85046e-07, 0)

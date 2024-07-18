@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dux111sytgdhe"]
+
+[ext_resource type="PackedScene" uid="uid://dpyccoysc6360" path="res://player/player.tscn" id="1_5n25m"]
+[ext_resource type="PackedScene" uid="uid://b8xjhfp0g5h8w" path="res://ally/cat_ally.tscn" id="2_ekx4d"]
+
+[node name="TestAlly" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5n25m")]
+position = Vector2(539, 352)
+
+[node name="CatAlly" parent="." instance=ExtResource("2_ekx4d")]
+position = Vector2(730, 357)
