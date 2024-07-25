@@ -7,8 +7,8 @@ No jogo, seu objetivo é simples: sobreviver o máximo possível enfrentando ond
 
 ## 🛠️ Tecnologia Utilizada:
 
-Engine: Godot Engine
-Linguagem de Script: GDScript
+- Engine: Godot Engine
+- Linguagem de Script: GDScript
 
 ## 🎮 Como Jogar:
 
@@ -16,7 +16,7 @@ Linguagem de Script: GDScript
 - Controles: [W-A-S-D] e [Mouse-1]
 - Objetivo: Sobreviva o máximo possível enfrentando as criaturas que aparecem.
 
-##📥 Instalação:
+## 📥 Instalação:
 
 - Clone este repositório: git clone https://github.com/seu-usuario/seu-repositorio.git
 - Abra o projeto na Godot Engine.
