@@ -12,12 +12,12 @@ Linguagem de Script: GDScript
 
 ## 🎮 Como Jogar:
 
-Jogo: [https://luwil.itch.io/hell-knight]
-Controles: [W-A-S-D] e [Mouse-1]
-Objetivo: Sobreviva o máximo possível enfrentando as criaturas que aparecem.
+- Jogo: [https://luwil.itch.io/hell-knight]
+- Controles: [W-A-S-D] e [Mouse-1]
+- Objetivo: Sobreviva o máximo possível enfrentando as criaturas que aparecem.
 
 ##📥 Instalação:
 
-Clone este repositório: git clone https://github.com/seu-usuario/seu-repositorio.git
-Abra o projeto na Godot Engine.
-Execute o jogo no editor ou exporte para sua plataforma preferida.
+- Clone este repositório: git clone https://github.com/seu-usuario/seu-repositorio.git
+- Abra o projeto na Godot Engine.
+- Execute o jogo no editor ou exporte para sua plataforma preferida.
