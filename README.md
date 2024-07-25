@@ -10,8 +10,9 @@ No jogo, seu objetivo é simples: sobreviver o máximo possível enfrentando ond
 Engine: Godot Engine
 Linguagem de Script: GDScript
 
-##🎮 Como Jogar:
+## 🎮 Como Jogar:
 
+Jogo: [https://luwil.itch.io/hell-knight]
 Controles: [W-A-S-D] e [Mouse-1]
 Objetivo: Sobreviva o máximo possível enfrentando as criaturas que aparecem.
 
