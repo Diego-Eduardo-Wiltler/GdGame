@@ -186,7 +186,7 @@ radius = 177.907
 height = 355.814
 
 [node name="Ritual" type="Node2D"]
-scale = Vector2(1.72, 1.72)
+scale = Vector2(1.36, 1.36)
 script = ExtResource("1_4hpah")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -196,7 +196,7 @@ libraries = {
 autoplay = "default"
 
 [node name="images" type="Node2D" parent="."]
-modulate = Color(0.619608, 0.129412, 0, 1)
+modulate = Color(0.60572, 0.3192, 0.76, 1)
 
 [node name="Circle03" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)

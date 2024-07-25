@@ -69,9 +69,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1bo4y")
 
 [node name="TextureRect" type="TextureRect" parent="Panel2"]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 48.0
 offset_top = -3.0
-offset_right = 177.0
+offset_right = 164.0
 offset_bottom = 109.0
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_62tl1")
@@ -82,9 +82,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 9.0
+offset_left = 17.0
 offset_top = 4.0
-offset_right = 51.0
+offset_right = 59.0
 offset_bottom = 44.0
 grow_horizontal = 2
 text = "50 
@@ -93,6 +93,7 @@ label_settings = SubResource("LabelSettings_djm80")
 
 [node name="KillCountLabel" type="Label" parent="Panel2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

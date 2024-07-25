@@ -10,4 +10,4 @@ func deal_damage():
 		if body.is_in_group("enemies"):
 			var  enemy: Enemy = body
 			enemy.damage(damage_amount)
-
+			

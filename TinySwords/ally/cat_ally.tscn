@@ -72,9 +72,10 @@ animations = [{
 radius = 19.105
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsr5y"]
-radius = 32.0156
+radius = 184.0
 
 [node name="CatAlly" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_41rf1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

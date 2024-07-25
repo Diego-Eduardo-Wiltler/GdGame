@@ -1,9 +1,69 @@
-[gd_scene load_steps=6 format=3 uid="uid://duywxdb0pviey"]
+[gd_scene load_steps=18 format=3 uid="uid://duywxdb0pviey"]
 
 [ext_resource type="Script" path="res://system/mob_spawner.gd" id="1_dvjhx"]
 [ext_resource type="PackedScene" uid="uid://bws38cyyo06wg" path="res://enemies/goblin.tscn" id="2_40hve"]
 [ext_resource type="PackedScene" uid="uid://dgh4mooad5gkn" path="res://enemies/pawn.tscn" id="3_aa8dg"]
 [ext_resource type="PackedScene" uid="uid://c5j3qbq8nq04b" path="res://enemies/sheep.tscn" id="4_iiryh"]
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="5_6sxu7"]
+[ext_resource type="PackedScene" uid="uid://b7n5vem8ul8gr" path="res://misc/skull.tscn" id="6_l6hou"]
+[ext_resource type="PackedScene" uid="uid://c825qu64vrsjs" path="res://misc/meat.tscn" id="7_gh6kc"]
+[ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="9_ypn8d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_286n8"]
+load_path = "res://.godot/imported/nightmare-galloping.png-8766ec4c1d7c37372cb716438d788aa8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4b4e"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(0, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bjy3"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(144, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yovul"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(288, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq038"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(432, 0, 144, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64a5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4b4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bjy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yovul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq038")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxnse"]
+radius = 15.3411
+height = 48.3344
+
+[sub_resource type="PackedScene" id="PackedScene_wjf5u"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Horse", "scale", "motion_mode", "script", "death_prefab", "drop_items", "enemies", "CharacterBody2D", "AnimatedSprite2D", "position", "sprite_frames", "autoplay", "frame_progress", "CollisionShape2D", "rotation", "shape", "FollowPlayer", "speed", "Node", "DamageDigitMarker", "Marker2D"),
+"node_count": 5,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 1, 6, 0, 0, 8, 8, -1, 5, 9, 5, 1, 6, 10, 7, 11, 8, 12, 9, 0, 0, 0, 13, 13, -1, 3, 9, 10, 14, 11, 15, 12, 0, 0, 0, 18, 16, -1, 2, 3, 13, 17, 14, 0, 0, 0, 20, 19, -1, 1, 9, 15, 0),
+"variants": [Vector2(-3.35106, 3.27588), 1, ExtResource("5_6sxu7"), ExtResource("6_l6hou"), Array[PackedScene]([ExtResource("7_gh6kc")]), Vector2(11.9365, -30.5261), Vector2(0.678577, 0.678577), SubResource("SpriteFrames_64a5s"), "default", 0.325977, Vector2(2.38731, -14.3473), -1.56638, SubResource("CapsuleShape2D_nxnse"), ExtResource("9_ypn8d"), 2.5, Vector2(0.595238, -65.4762)],
+"version": 3
+}
 
 [sub_resource type="Curve2D" id="Curve2D_h02lu"]
 _data = {
@@ -14,7 +74,7 @@ point_count = 5
 [node name="MobSpawner" type="Node2D"]
 position = Vector2(104, 174)
 script = ExtResource("1_dvjhx")
-creatures = Array[PackedScene]([ExtResource("2_40hve"), ExtResource("3_aa8dg"), ExtResource("4_iiryh")])
+creatures = Array[PackedScene]([ExtResource("2_40hve"), ExtResource("3_aa8dg"), ExtResource("4_iiryh"), SubResource("PackedScene_wjf5u")])
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_h02lu")

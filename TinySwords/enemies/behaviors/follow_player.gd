@@ -1,3 +1,4 @@
+class_name follow_player
 extends Node
 
 @export var speed: float = 1
@@ -10,6 +11,7 @@ func _ready():
 	sprite = enemy.get_node("AnimatedSprite2D")
 
 func _physics_process(delta: float):
+	if GameManager.is_game_over: return
 	var player_position = GameManager.player_position
 	var difference = player_position - enemy.position  
 	if difference.length_squared() < 0.001:

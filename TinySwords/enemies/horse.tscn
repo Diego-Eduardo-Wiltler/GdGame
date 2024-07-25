@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://b18na7hn8uw5h"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_6din7"]
+[ext_resource type="PackedScene" uid="uid://b7n5vem8ul8gr" path="res://misc/skull.tscn" id="2_a8x6p"]
+[ext_resource type="PackedScene" uid="uid://c825qu64vrsjs" path="res://misc/meat.tscn" id="3_ww7i7"]
+[ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="4_jvet4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_286n8"]
+load_path = "res://.godot/imported/nightmare-galloping.png-8766ec4c1d7c37372cb716438d788aa8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4b4e"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(0, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bjy3"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(144, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yovul"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(288, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq038"]
+atlas = SubResource("CompressedTexture2D_286n8")
+region = Rect2(432, 0, 144, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64a5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4b4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bjy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yovul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq038")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxnse"]
+radius = 15.3411
+height = 48.3344
+
+[node name="Horse" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(-3.35106, 3.27588)
+motion_mode = 1
+script = ExtResource("1_6din7")
+death_prefab = ExtResource("2_a8x6p")
+drop_items = Array[PackedScene]([ExtResource("3_ww7i7")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.9365, -30.5261)
+scale = Vector2(0.678577, 0.678577)
+sprite_frames = SubResource("SpriteFrames_64a5s")
+autoplay = "default"
+frame_progress = 0.0527178
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38731, -14.3473)
+rotation = -1.56638
+shape = SubResource("CapsuleShape2D_nxnse")
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("4_jvet4")
+speed = 2.5
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0.595238, -65.4762)

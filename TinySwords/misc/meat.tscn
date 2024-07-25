@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c825qu64vrsjs"]
+[gd_scene load_steps=13 format=3 uid="uid://c825qu64vrsjs"]
 
 [ext_resource type="Texture2D" uid="uid://dfl5hlwdnxf8k" path="res://addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_smmd3"]
 [ext_resource type="Script" path="res://misc/life_regenerator.gd" id="2_lwa73"]
+[ext_resource type="AudioStream" uid="uid://d1o1dksoiq641" path="res://music/magic_spell_10-39689.wav" id="3_ppxyv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0th8"]
 atlas = ExtResource("1_smmd3")
@@ -63,7 +64,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_gm7cu"]
 radius = 30.0
 
-[node name="Meat" type="AnimatedSprite2D"]
+[node name="Meat" type="AnimatedSprite2D" node_paths=PackedStringArray("meat_collect_sound")]
 sprite_frames = SubResource("SpriteFrames_8u6ap")
 autoplay = "default"
 frame = 6
@@ -71,6 +72,12 @@ frame_progress = 1.0
 offset = Vector2(0, -30)
 script = ExtResource("2_lwa73")
 regeneration_amount = 5
+meat_collect_sound = NodePath("AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ppxyv")
+volume_db = -5.0
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
